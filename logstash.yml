@@ -1,6 +1,14 @@
-input { 
-		file {
-			type => "apache"
-			path => ["/logs/clebio.log"]
-		}
-	}
+input {
+  heartbeat {
+    interval => 5
+    message  => 'Hello from Logstash 💓'
+  }
+}
+
+output {
+  elasticsearch {
+    hosts    => [ 'elasticsearch' ]
+    user     => 'elastic'
+    password => 'changeme'
+  }
+}
