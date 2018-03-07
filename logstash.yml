@@ -1,0 +1,6 @@
+input { 
+		file {
+			type => "apache"
+			path => ["/logs/clebio.log"]
+		}
+	}
